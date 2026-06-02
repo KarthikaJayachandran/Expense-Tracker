@@ -9,6 +9,7 @@ A full-stack web application to track personal expenses by category, with monthl
 - **Add / Edit / Delete** expenses
 - **Filter** by category, date range, and title search
 - **Monthly Summary** with category-wise breakdown and visual progress bars
+- **Export to CSV** to easily backup your current filtered view
 - Expenses sorted by date (latest first)
 
 ---
@@ -134,7 +135,7 @@ During implementation, prioritization focused on:
 ## ⚖️ Tradeoffs & Skipped Features
 
 ### What was completed vs intentionally skipped
-- **Completed**: Full CRUD, advanced filtering, robust validation, dynamic monthly summaries, and a responsive custom UI.
+- **Completed**: Full CRUD, advanced filtering, robust validation, dynamic monthly summaries, dashboard statistics, CSV export, and a responsive custom UI.
 - **Skipped**: Redux/Context API, React Router, Authentication, Pagination, and Database Migrations (Alembic).
 
 ### Reasons for skipping features
@@ -160,7 +161,7 @@ During implementation, prioritization focused on:
 
 - [ ] Add Alembic for seamless database schema migrations.
 - [ ] Implement pagination on the `/expenses` endpoint for infinite scrolling on the frontend.
-- [ ] Add CSV/PDF export functionality for expense reports.
+- [ ] Add PDF export functionality for expense reports.
 - [ ] Implement budget limits per category with visual alerts in the summary.
 - [ ] Write a comprehensive test suite (pytest for backend, vitest/RTL for frontend).
 - [ ] Add offline support via PWA (Service Workers).
