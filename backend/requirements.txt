@@ -1,0 +1,8 @@
+# Personal Expense Tracker — Backend Dependencies
+# Python >= 3.10 required
+# Python 3.14 users: these versions include pre-built wheels (no Rust compilation needed)
+
+fastapi>=0.115.0          # Web framework with automatic OpenAPI docs
+uvicorn[standard]>=0.30.0 # ASGI server (with watchfiles for --reload)
+sqlalchemy>=2.0.35        # ORM — using modern 2.0 mapped_column API
+pydantic>=2.10.0          # Data validation — v2 with Python 3.14 wheels
