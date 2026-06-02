@@ -85,6 +85,14 @@ export default function App() {
       </header>
 
       <main className="app-main">
+        <div className="hero-section">
+          <h1 className="hero-title">Welcome to <span className="brand-gradient">PocketLens</span></h1>
+          <p className="hero-quote">
+            "Do not save what is left after spending, but spend what is left after saving."<br/>
+            <span className="hero-author">— Warren Buffett</span>
+          </p>
+        </div>
+
         {/* Monthly Summary Component */}
         <Summary refreshTrigger={refreshSummaryTrigger} />
 

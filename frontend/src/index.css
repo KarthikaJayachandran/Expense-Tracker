@@ -113,6 +113,59 @@ input, select, textarea { font-family: var(--font); }
   color: #fff !important;
 }
 
+/* ─── Hero Section ──────────────────────────────────────────────────────────── */
+.hero-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 3rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-quote {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero-author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-style: normal;
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
 /* ─── Main Content ──────────────────────────────────────────────────────────── */
 .app-main {
   flex: 1;
