@@ -5,6 +5,7 @@ import { ExpenseList } from "./components/ExpenseList";
 import { Filters } from "./components/Filters";
 import { Summary } from "./components/Summary";
 import { DashboardStats } from "./components/DashboardStats";
+import { exportExpensesToCSV } from "./utils/csvExport";
 import type { Expense, FilterParams } from "./types/expense";
 
 const defaultFilters: FilterParams = {
@@ -100,7 +101,16 @@ export default function App() {
         <div className="card list-card">
           <div className="list-header">
             <h3>📋 Expense List</h3>
-            {loading && <span className="spinner">Syncing...</span>}
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              {loading && <span className="spinner" title="Syncing..." />}
+              <button 
+                className="btn btn-ghost btn-sm" 
+                onClick={() => exportExpensesToCSV(expenses)}
+                disabled={expenses.length === 0}
+              >
+                📥 Export CSV
+              </button>
+            </div>
           </div>
 
           {error && <div className="alert alert-error">{error}</div>}
