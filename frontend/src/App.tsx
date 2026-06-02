@@ -4,6 +4,7 @@ import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
 import { Filters } from "./components/Filters";
 import { Summary } from "./components/Summary";
+import { DashboardStats } from "./components/DashboardStats";
 import type { Expense, FilterParams } from "./types/expense";
 
 const defaultFilters: FilterParams = {
@@ -105,11 +106,14 @@ export default function App() {
           {error && <div className="alert alert-error">{error}</div>}
 
           {!error && (
-            <ExpenseList
-              expenses={expenses}
-              onEdit={handleEditClick}
-              onRefetch={handleRefreshAll}
-            />
+            <>
+              <DashboardStats expenses={expenses} />
+              <ExpenseList
+                expenses={expenses}
+                onEdit={handleEditClick}
+                onRefetch={handleRefreshAll}
+              />
+            </>
           )}
         </div>
       </main>
