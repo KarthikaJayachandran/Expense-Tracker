@@ -77,7 +77,7 @@ export default function App() {
       <header className="app-header">
         <div className="header-brand">
           <span className="brand-icon">💰</span>
-          <span className="brand-name">Expense Tracker</span>
+          <span className="brand-name">PocketLens</span>
         </div>
         <button className="btn btn-primary" onClick={handleAddClick} id="add-expense-btn">
           ➕ Add Expense
