@@ -1,4 +1,4 @@
-# 💰 PocketLens
+# 💰 PocketLens — Personal Expense Tracker
 
 A full-stack web application to track personal expenses by category, with monthly summaries and filters.
 
