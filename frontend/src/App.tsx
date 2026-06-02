@@ -21,6 +21,10 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
+  const hasActiveFilters = Boolean(
+    filters.category || filters.from_date || filters.to_date || filters.search
+  );
+
   // Refresh trigger for Summary component
   const [refreshSummaryTrigger, setRefreshSummaryTrigger] = useState(0);
 
@@ -130,6 +134,7 @@ export default function App() {
                 expenses={expenses}
                 onEdit={handleEditClick}
                 onRefetch={handleRefreshAll}
+                hasActiveFilters={hasActiveFilters}
               />
             </>
           )}

@@ -2,11 +2,13 @@ import { useState } from "react";
 import { expenseApi, getErrorMessage } from "../api/expenseApi";
 import { CATEGORY_ICONS } from "../types/expense";
 import type { Expense } from "../types/expense";
+import { EmptyState } from "./EmptyState";
 
 interface Props {
   expenses: Expense[];
   onEdit: (expense: Expense) => void;
   onRefetch: () => void;
+  hasActiveFilters: boolean;
 }
 
 function formatDate(dateStr: string): string {
@@ -26,7 +28,7 @@ function formatAmount(amount: number): string {
   }).format(amount);
 }
 
-export function ExpenseList({ expenses, onEdit, onRefetch }: Props) {
+export function ExpenseList({ expenses, onEdit, onRefetch, hasActiveFilters }: Props) {
   const [deletingId, setDeletingId] = useState<number | null>(null);
   const [confirmId, setConfirmId] = useState<number | null>(null);
   const [deleteError, setDeleteError] = useState<string | null>(null);
@@ -46,13 +48,7 @@ export function ExpenseList({ expenses, onEdit, onRefetch }: Props) {
   }
 
   if (expenses.length === 0) {
-    return (
-      <div className="empty-state">
-        <div className="empty-icon">💸</div>
-        <h3>No expenses found</h3>
-        <p>Add your first expense or adjust your filters.</p>
-      </div>
-    );
+    return <EmptyState hasActiveFilters={hasActiveFilters} />;
   }
 
   return (
